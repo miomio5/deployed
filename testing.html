@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cartstyle.css">
+    <link rel="stylesheet" href="checkout.css">
+    <title>Document</title>
+</head>
+<header>
+  <nav class="navigate">
+    <ul>
+        <li id ="secured"> CART</li>
+        <img src="logo.png" style="width:80px;height:80px;float:left; margin:0px 180px">
+        
+    </ul> 
+</nav>
+    <div class="topbar">
+    <div class="post">
+       <h1> US$1539.98</h1>
+       <br><a href="checkout.html"><button >CHECKOUT</button></a>
+    </div>
+    <h1>&nbsp Cart(2 Items)</h1>
+</div>
+</header>
+<body>
+    <!-- ------------------------------------------------------------------- -->
+    <div class="outer">
+    <div class="inner">
+        <img src="https://assets3.razerzone.com/dOuJTcXngIF5J8TkGz_gOl2VFik=/500x500/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhed%2Fhf3%2F8967572389918%2FRZ06-03090100-R3M1.png" id="img1">
+    </div>
+    <div class="inner">
+        <h2>Erazer Junglecat-Option B</h2><br>
+            
+                <ul>
+                    <li>Bluetooth Low Energy (BLE) connection, 100+ hour battery life</li>
+                    <li>One sided controller play</li>
+                    <li>For Razer Phone 2, Samsung Galaxy Note 9, and Samsung Galaxy S10+</li>
+                </ul>
+    </div>
+    <div class="innerrt" style="position:absolute;right: 260px;font-size:20px;"><br>
+
+         Quantity
+            <select name="quantity" >
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+           <br>
+           <br>
+           <br>
+           <button style="margin-left: 70px;margin-top: -10px;">Remove</button>
+    </div>
+    <div class="innerrt">
+       <p style="position:absolute;right: 70px;font-size:25px;"> $469.99 </p>
+    </div>
+</div>
+<br>
+<div class="outer">
+    <div class="inner">
+        <img src="https://assets3.razerzone.com/eeDO0OL9S11xaxWmE-bIouNwrgg=/500x500/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh8f%2Fhfa%2F8965970952222%2FRC21-01430100-R3U1.png" id="img1">
+    </div>
+    <div class="inner">
+        <h2>Erazer Core X Chroma Pro</h2><br>
+            
+                <ul>
+                    <li>Bluetooth Low Energy (BLE) connection, 100+ hour battery life</li>
+                    <li>One sided controller play</li>
+                    <li>For Razer Phone 2, Samsung Galaxy Note 9, and Samsung Galaxy S10+</li>
+                </ul>
+    </div>
+    <div class="innerrt" style="position:absolute;right: 260px;font-size:20px;"><br>
+
+        Quantity
+           <select name="quantity" >
+               <option value="1" selected>1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+           </select>
+           
+          <br>
+          <br>
+          <br>
+       <button style="margin-left: 70px;margin-top:-10px">Remove</button>
+   </div>
+    <div class="innerrt">
+       <p style="position:absolute;right: 70px;font-size:30px;"> $1069.99 </p>
+    </div>
+</div>
+   
+  
+  <div class="bill" >
+        <div class="e">
+            Add a RazerCare Protection Plan for Razer Core X Chroma<br>
+            Extends coverage to 3 years for peace of mind. 
+            <a href="#" style="font-size:17px">
+              Learn More
+            </a>
+            <br>
+            <button id="add">ADD</button>
+            <br>
+            <label for="choose plan">Choose plan</label>
+            <select name="plan" id="chooseplan">
+                <option value="1stoption">None</option>
+                <option value="2ndoption">RazerCare Essential For Core X Chroma : US$29.99</option>
+                <option value="3rdoption">RazerCare Essential For Core X Chroma : US$39.99</option>
+            </select>
+        </div>
+        <br>
+    
+        <div class="subtot">
+            Subtotal <span id="tot">US$1539.98<br></span>
+            
+            (Excludes local taxes) <br>
+            To be calculated after address entry
+        </div>
+        <br>
+            <label for="promo">Have a promo code?</label>
+            <input type="text" id="promo" placeholder="promo code" name="promocode">
+            <button>APPLY</button>
+        
+        <div class="container">
+            <h3> <u> Estimated Total</u></h3>
+            <strong style="font-size: 25px;">US$1539.98</strong>
+            <br><br>
+            Actual sales tax will be calculated later upon entry
+            <br>
+            of your billing/shipping address.
+            <span>
+                <a href="checkout.html" style="float: right; margin-top:-100px"><button>CHECKOUT</button></a>
+            </span>
+        </div>
+         
+    </div>
+
+</body>
+</html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ERAZOR</title>
+  <title>WEB DEVELOPMENT</title>
   <link rel="stylesheet" href="website.css" media="screen">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,16 +31,16 @@
       <li><a href="#about"> About </a></li>
 
       <li class="dropdown">
-        <a href="shop_page.html" class="dropbtn">Shop</button>
+        <a href="shop_page.php" class="dropbtn">Shop</button>
           <div class="dropdown-content">
             <a href="#">Gaming Mouse</a><br><br />
             <a href="#">Keyboard</a><br><br />
             <a href="#">Controller</a><br />
           </div>
       </li>
-      <li><a href="#contact"> Contact Us </a></li>
+      <li><a href="support.php"> Contact Us </a></li>
 
-      <li><a href="login.html" style="float:right;right:310px;position:absolute"> Login/SignUp </a></li>
+      <li><a href="login.php" style="float:right;right:310px;position:absolute"> Login/SignUp </a></li>
       
       <input type="text" placeholder="Search Here" id="searchbx">
 
@@ -48,7 +48,7 @@
         <img src="search.png" style="height:18px;width:18px;padding-top:3px">
       </button>
 
-      <a href="testing.html" class="tooltip" style="float:right;right:50px;top:43px;position:absolute;border-radius: 5px;">
+      <a href="cartpage.php" class="tooltip" style="float:right;right:50px;top:43px;position:absolute;border-radius: 5px;">
         <img src="cart.png" id="cartpict">
         <span class="tooltiptext">Cart</span>
       </a>
@@ -207,38 +207,7 @@
 
   <br>
   <hr style="width:100%;border:3px solid rgb(61, 233, 61);">
-  <!---------------------------------------------------------------------------------  -->
-  <h2 id='contact'>Contact Us</h2>
-  <div id="contactusbox" class="box">
-    <form action="config.php" onsubmit="myFunction()">
-      <div class="input-box">
-        <input type="text" name="username" autocomplete="off" required>
-        <label for="">Name</label>
-      </div>
-
-      <div class="input-box">
-        <input type="email" name="email" autocomplete="on" required>
-        <label for="">Email</label>
-      </div>
-
-      <div class="input-box">
-        <input type="phoneno" name="phoneno" autocomplete="off" required>
-        <label for="">Phone Number</label>
-      </div>
-
-      <div class="input-box">
-        <input type="query" name="query" autocomplete="off" required>
-        <label for="">Query</label>
-      </div>
-      <script>function myFunction() { alert("The form was submitted"); }</script>
-
-      <input type="submit" value="Save">
-
-    </form>
-
-  </div>
-
-  <br>
+  
   <h2>Thank You for visiting here!!</h2>
   <script src="website.js"></script>
   <script src="test.js"></script>

@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Calculator(JS)</title>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Simple Calculator</h1>
+        <div class="display"></div>
+        <table id="keypad">
+            <tr>
+                <td><button id="btn">C</button></td>
+                <td><button id="btn">%</button></td>
+                <td><button id="btn">del</button></td>
+                <td><button id="btn">/</button></td>
+            </tr>
+            <tr>
+                <td><button id="btn">7</button></td>
+                <td><button id="btn">8</button></td>
+                <td><button id="btn">9</button></td>
+                <td><button id="btn">*</button></td>
+            </tr>
+            <tr>
+                <td><button id="btn">4</button></td>
+                <td><button id="btn">5</button></td>
+                <td><button id="btn">6</button></td>
+                <td><button id="btn">-</button></td>
+            </tr>
+            <tr>
+                <td><button id="btn">1</button></td>
+                <td><button id="btn">2</button></td>
+                <td><button id="btn">3</button></td>
+                <td><button id="btn">+</button></td>
+            </tr>
+            <tr>
+                <td><button id="btn">00</button></td>
+                <td><button id="btn">0</button></td>
+                <td><button id="btn">.</button></td>
+                <td><button id="btn">=</button></td>
+            </tr>
+        </table>
+    <script>
+        var keypad = document.getElementById('keypad');
+        console.log(keypad);
+        keypad.addEventListener('click' , display);
+        var pervious_click;
+        function display(arg){
+        var button_text;
+        let screen = document.querySelector('.display');
+        if(arg.target.id == 'btn'){
+        button_text = arg.target.innerHTML;
+        if(pervious_click == '='){
+            if(button_text != 'C'){
+            screen.innerHTML = button_text;
+            }
+            else{ 
+            screen.innerHTML = '';
+            }
+            pervious_click = null;
+            }
+        else{
+            if(button_text == 'C'){
+            screen.innerHTML = "";
+            }
+            else if(button_text == 'del'){
+            var content = screen.innerHTML
+            screen.innerHTML = content.substring(0,content.length-1);
+            }
+            else if(button_text == '='){
+            screen.innerHTML = eval(screen.innerHTML);
+            pervious_click = button_text;
+            }
+            else{
+            screen.innerHTML+=button_text;
+            }
+            }
+            console.log(button_text);
+            console.log(pervious_click);
+            }
+        }
+    </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+INSERT INTO `assets_commodity` (`Asset_ID`, `LTP`, `Quantity`, `Type`) VALUES ('116', '61219', '100', 'silver');
+INSERT INTO `assets_commodity` (`Asset_ID`, `LTP`, `Quantity`, `Type`) VALUES ('120', '48000', '100', 'copper');
+INSERT INTO `assets_commodity` (`Asset_ID`, `LTP`, `Quantity`, `Type`) VALUES ('144', '31500', '100', 'cotton');
+INSERT INTO `assets_commodity` (`Asset_ID`, `LTP`, `Quantity`, `Type`) VALUES ('103', '279', '100', 'NaturalGas');
+

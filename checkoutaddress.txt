@@ -1,0 +1,6 @@
+INSERT INTO `account` ( `country`, `balance`, `password`, `username`) VALUES ('Afghanistan', '780000', 'qwery', 'jamieson');
+INSERT INTO `account` ( `country`, `balance`, `password`, `username`) VALUES ('India', '800000', 'qazwsx', 'sparkles');
+INSERT INTO `account` ( `country`, `balance`, `password`, `username`) VALUES ('Pakistan', '900000', 'edcrfv', 'purohit');
+INSERT INTO `account` ( `country`, `balance`, `password`, `username`) VALUES ('Myanmar', '2000000', 'tgbyhn', 'gamerfleet');
+INSERT INTO `account` ( `country`, `balance`, `password`, `username`) VALUES ('India', '785201', 'yhnujm', 'mythpat');
+INSERT INTO `account` ( `country`, `balance`, `password`, `username`) VALUES ('Bangladesh', '795200', 'iklpo', 'mrbeast');

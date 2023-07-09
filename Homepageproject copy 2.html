@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="stylesheetweb.css"> -->
+    <style>
+@import "https://fonts.googleapis.com/css?family=Open+Sans:800&display=swap";
+        /*  body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: open sans;
+        background: #f8f8f8;
+}
+*/
+        /* h3 {
+                        text-align: center;
+                        margin: 6% auto;
+                        font-size: 1.8rem;
+                        font-weight: 800;
+                        color: #444;
+                } */
+        
+        .slider {
+            display: flex;
+            height: 350px;
+            max-height: auto;
+            overflow-y: hidden;
+            overflow-x: scroll !important;
+            padding: 16px;
+            transform: scroll(calc(var(--i, 0)/var(--n)*-100%));
+            scroll-behavior: smooth;
+        }
+        
+        .slider::-webkit-scrollbar {
+            height: 5px;
+            width: 150px;
+            display: none;
+        }
+        
+        .slider::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .slider::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        
+        .slider::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        .slider a:hover {
+            transform: scale(1.05);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .slide {
+            position: relative;
+        }
+        
+        .slide a {
+            height: 100%;
+            width: 250px;
+            margin: 0 10px;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: .25s ease-in-out;
+        }
+        
+        .control-prev-btn {
+            position: absolute;
+            top: 68rem;
+            left: 0;
+            background-color: #e4e1e1;
+            height: 100px;
+            line-height: 100px;
+            width: 30px;
+            text-align: center;
+            box-shadow: 0 3px ##e4e1e1;
+            user-select: none;
+            color: #444;
+            cursor: pointer;
+        }
+        
+        .control-next-btn {
+            position: absolute;
+            top: 68rem;
+            right: 0;
+            background-color: #e4e1e1;
+            height: 100px;
+            line-height: 100px;
+            width: 30px;
+            text-align: center;
+            box-shadow: 0 3px #e4e1e1;
+            user-select: none;
+            color: #444;
+            cursor: pointer;
+        }
+        
+        .slide a.zoomed {
+            width: 500px;
+            height: 600px;
+            position: fixed;
+            left: 25%;
+            top: 0%;
+            z-index: 1000;
+            transform: scale(1) translatey(0) !important;
+        }
+        
+        .overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .45);
+            top: 0;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        @media only screen and (max-width: 420px) {
+            .slider {
+                padding: 0;
+            }
+            .slide {
+                padding: 16px 10px;
+            }
+            .slide a {
+                margin: 0;
+            }
+            .control-prev-btn {
+                top: 37%;
+            }
+            .control-next-btn {
+                top: 37%;
+            }
+        }
+        /* ------------------------------------------------------------- */
+        
+        * {
+            background-color: #e4e1e1;
+        }
+        
+        .logo img {
+            border: 1px solid transparent;
+            border-radius: 2px;
+            margin-top: 4px;
+            padding: 10px;
+            width: 85px;
+            margin-left: 50px;
+        }
+        
+        .citiesbutton {
+            background-color: #f5f2f2;
+            padding: 24px;
+            font-size: 16px;
+            margin-left: -30px;
+            margin-top: -8px;
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 300px;
+        }
+        
+        .citiesbutton .fa-map-marker {
+            margin-left: -70px;
+            padding: 10px color: #f1efef;
+        }
+        
+        .citiesmenu {
+            position: absolute;
+            left: 300px;
+            top: 50px;
+            padding-right: 10px;
+            display: inline-block;
+        }
+        
+        .citiesoptions {
+            display: none;
+            position: relative;
+            background-color: #f5f2f2;
+            min-width: 300px;
+            margin-left: -43px;
+        }
+        
+        .buttontext {
+            display: inline;
+            background-color: #f1efef;
+            margin-left: 30px;
+        }
+        
+        .citiesoptions a {
+            color: rgb(14, 13, 13);
+            padding: 12px 12px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .citiesoptions a:hover {
+            background-color: rgb(194, 190, 190);
+        }
+        
+        .citiesmenu:hover .citiesoptions {
+            display: block;
+        }
+        
+        .buttontext:hover {
+            background-color: #f1efef;
+        }
+        
+        .citiesmenu:hover .citiesbutton {
+            background-color: #f1efef;
+        }
+        
+        .wrapper {
+            min-height: 1px;
+            display: right;
+            margin-right: 440px;
+            margin-top: -96px;
+            justify-content: right;
+        }
+        
+        .search_box {
+            background: #f5f2f2;
+            float: right;
+            position: relative;
+            padding: 9px 11px;
+            border-radius: 8px;
+            display: flex;
+            border: 1px solid black;
+        }
+        
+        .search_box .search_btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 30%;
+            background: #f1efef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(26, 24, 24);
+            margin-right: 9px;
+            margin-top: -2px;
+            cursor: pointer;
+        }
+        
+        .search_box .input_search {
+            outline: none;
+            border: black;
+            background: #f5f2f2;
+            border-radius: 10px;
+            padding: 5px 8px;
+            width: 300px;
+            height: 40px;
+            padding-right: 20px;
+            color: rgb(12, 12, 12);
+        }
+        
+        .search_box .search_btn:hover {
+            background-color: #e6e3e3;
+        }
+        
+         ::placeholder {
+            color: rgb(51, 49, 49);
+            font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .cart {
+            border: none;
+            float: right;
+            background-color: #e4e1e1;
+            border: 1px black;
+            text-decoration: none;
+            font-size: 12px;
+            margin-top: -32px;
+            margin-right: -830px;
+            cursor: pointer;
+            color: black;
+            display: block;
+        }
+        /* .btn {
+background: #4c6ca0;
+color: #fff;
+border: none;
+font-size: 16px;
+padding: 10px 20px;
+border-radius: 5px;
+margin-left: -600px;
+cursor: pointer;
+float: center;
+} */
+        
+        .btn1 {
+            background: #e4e1e1;
+            color: rgb(43, 42, 42);
+            border: 1px black;
+            font-size: 18px;
+            padding: 15px 20px;
+            margin-top: 10px;
+            ;
+            border-radius: 5px;
+            margin-right: -670px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            cursor: pointer;
+            float: right;
+        }
+        
+        .btn:hover {
+            color: #f4f4f4;
+            background: #446190;
+        }
+        /* .carttext
+{margin-right: -42px;
+font-family: sans-serif;
+font-size: 18px;
+} */
+        /* The switch - the box around the slider */
+        /* .switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
+
+/* Hide default HTML checkbox */
+        /* .switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+        
+        .slider {
+            /* position: absolute; */
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e4e1e1;
+            -webkit-transition: .4s;
+            transition: .4s;
+            height: 400px;
+        }
+        /* 
+.slider:before { */
+        /* position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: #e4e1e1;
+-webkit-transition: .4s;
+transition: .4s; */
+    }
+    /* input:checked + .slider { */
+    /* background-color: #2196F3; */
+}
+
+/* input:focus + .slider { */
+
+/* <box-shadow: 0 0 1px #2196F3;
+} */
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+/* .slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before { */
+border-radius: 50%;
+
+}
+*/ */ .gif .img {
+    class="center" width: 50%;
+    height: auto;
+}
+#header img {
+    height: 100px;
+    width: 100px;
+}
+body {
+    background-color: #e4e1e1;
+}
+#Explore {
+    height: 35rem;
+    /* background-color: pink; */
+}
+.subSection {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+}
+#Explore .subSection {
+    /* display: flex;
+flex-direction: row; */
+    /* background-color: green; */
+    /* flex-direction: row; */
+    height: 25rem;
+    /* box-sizing: border-box;
+margin: 0 auto;
+justify-content: space-evenly;
+align-items: center;
+flex-wrap: wrap;
+width: 95%; */
+}
+#OurPriorities .subSection {
+    height: 600px;
+}
+.heading {
+    margin-left: 2.5%;
+}
+#Explore .foodImg img {
+    width: 90%;
+    height: 250px;
+    border-radius: 5%;
+}
+.foodImg {
+    /* border: 5px solid black; */
+    /* background-color: #A8DADC; */
+    transition: box-shadow .3s;
+    width: 350px;
+    height: 350px;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 5%;
+    margin: 0 20px;
+}
+.slide .fooimg img {
+    width:300px;
+    height:300px;
+    margin:auto;
+    padding-left:600px;
+}
+.foodImg:hover {
+    /* box-shadow: 0 0 10px #A8DADC; */
+    box-shadow: 0 0 10px #1D3557;
+    /* box-shadow: 0 0 10px #E63946; */
+}
+.feature {
+    /* background-color: hotpink; */
+}
+
+/* .slide img {
+    width: 70px;
+    height: 70px;
+} */
+.slideshow-container {
+    max-width: 100px;
+    position: relative;
+    margin: auto;
+    display: flex;
+}
+
+/* Hide the images by default */
+.mySlidefade {
+    display: flex;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+#OurPriorities .subSection {
+    height: 300px;
+    /* background-color: green; */
+}
+#OurPriorities .feature {
+    /* background-color: lightblue; */
+    text-align: center;
+    margin: auto 0;
+}
+#OurPriorities .feature img {
+    width: 200px;
+    height: 180px;
+}
+#Brands {
+    margin-bottom: 100px;
+}
+#Brands .topbrandimage {
+    margin-top: 10px;
+}
+#Explore a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+#Explore .foodImg {
+    font-family: 'Philosopher',
+    sans-serif;
+    font-size: 25px;
+    color: #1D3557;
+}
+.heading {
+    font-family: 'Ubuntu',
+    sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #1D3557;
+    text-shadow: 0 0 3px #E63946;
+}
+#OurPriorities h4 {
+    font-family: 'Philosopher',
+    sans-serif;
+    color: #E63946;
+    font-size: 20px;
+}
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="ash">
+        <!-- Header -->
+        <div id="header" class="logo">
+
+            <a href="/Homepageproject.html"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Foody-Logo.svg/1024px-Foody-Logo.svg.png" alt="FOODY IMAGE"></a>
+            </img>
+            <div class="citiesmenu">
+                <button class="citiesbutton"> <i class="fa fa-map-marker"> </i>
+                                        <div class=buttontext> Choose Your City </div>
+                                </button>
+                <div class="citiesoptions">
+                    <a href="#">Delhi</a>
+                    <a href="#">Mumbai</a>
+                    <a href="#">Ahmedabad</a>
+                    <a href="#">Kolkata</a>
+                    <a href="#">Bangalore</a>
+
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="search_box">
+                    <div class="search_btn"><i class="fa fa-search"></i></div>
+                    <input type="text" class="input_search" placeholder="Search for restaurant, cuisine or a dish">
+
+                </div>
+
+
+
+                <button class=cart> <img
+                                                src="https://b.zmtcdn.com/data/o2_assets/78d25215ff4c1299578ed36eefd5f39d1616149985.png"
+                                                alt="Cart"> </img>
+                                        <!-- <div class="carttext">Cart </div>
+                    </div></button> -->
+            </div>
+            </button>
+
+            <!-- <a class="btn" href="#">Login</a> -->
+            <button class="btn1"> Sign up &nbsp&nbsp &nbsp&nbsp Login</button>
+        </div>
+        <!-- <div class="slider">
+                    <!-- Rectangular switch 
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                    
+                    <!-- Rounded switch 
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    < /label>
+                         </div> -->
+
+
+
+
+        <hr>
+        <div class="gif">
+            <img src="https://miro.medium.com/max/1400/1*fE3JkGyzhWXlXApVnShDtw.gif" alt="" width="100%">
+            <!-- </img> <img src="http://assets.rappler.com/1DA24C9195434E09A0DC1F4E8C150500/img/E076506A9D6A4016A838B3685DBF67B1/grab.gif"> -->
+        </div>
+        <!-- <br><br><br><br><br><br><br><br><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sapiente unde impedit harum ipsum natus quae fugiat tenetur nam aliquid.</p>
+                  <br><br> -->
+        <br> <br> <br>
+    </div>
+    <!-- Header -->
+
+    <!-- start -->
+    <!-- EXPLORE -->
+    <section id="Explore">
+
+
+        <h2 class="heading">EXPLORE</h2>
+        <!-- <section id="section-2" style= "font-weight: 200:bold;"> -->
+        <!-- <div class="flex-row" "> -->
+        <section class="subSection">
+            <div  class="slider">
+                <div class="slide">
+                    <a href="/blanklink.html">
+                        <div class="foodImg">
+                            <img src="https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+                            <h3 class="Heading1">North Indian</h3>
+
+
+
+
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="/blanklink.html">
+                        <div class="foodImg">
+                            <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80">
+                            <h3 class="Heading1">South Indian</h3>
+
+
+
+
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="/blanklink.html">
+                        <div class="foodImg">
+                            <img src="https://images.unsplash.com/photo-1607328874071-45a9cd600644?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80">
+                            <h3 class="Heading1">Chinese</h3>
+
+
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="/blanklink.html">
+                        <div class="foodImg">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=481&q=80">
+                            <h3 class="Heading1">Italian</h3>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="/blanklink.html">
+                        <div class="foodImg">
+                            <img src="https://images.unsplash.com/photo-1606131731446-5568d87113aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80">
+                            <h3 class="Heading1">Fast Food</h3>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="/blanklink.html">
+                        <div class="foodImg">
+                            <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=398&q=80">
+                            <h3 class="Heading1">Shakes</h3>
+
+                        </div>
+                    </a>
+                </div>
+
+                <div onclick="prev()" class="control-prev-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div onclick="next()" class="control-next-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+
+
+            <div class="overlay"></div>
+        </section>
+        <!-- --------------------------------------------------------------- -->
+        <!-- <div class="subSection">
+                        <a href="/blanklink.html">
+                                <div class="foodImg">
+                                        <img
+                                                src="https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+                                        <h3 class="Heading1">North Indian</h3>
+
+
+
+
+                                </div>
+                        </a>
+                        <a href="/blanklink.html">
+                                <div class="foodImg">
+                                        <img
+                                                src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80">
+                                        <h3 class="Heading1">South Indian</h3>
+
+
+
+
+                                </div>
+                        </a>
+                        <a href="/blanklink.html">
+                                <div class="foodImg">
+                                        <img
+                                                src="https://images.unsplash.com/photo-1607328874071-45a9cd600644?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80">
+                                        <h3 class="Heading1">Chinese</h3>
+
+
+                                </div>
+                        </a>
+                        <a href="/blanklink.html">
+                                <div class="foodImg">
+                                        <img
+                                                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=481&q=80">
+                                        <h3 class="Heading1">Italian</h3>
+
+                                </div>
+                        </a>
+
+                        <a href="/blanklink.html">
+                                <div class="foodImg">
+                                        <img
+                                                src="https://images.unsplash.com/photo-1606131731446-5568d87113aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80">
+                                        <h3 class="Heading1">Fast Food</h3>
+
+                                </div>
+                        </a>
+
+                        <a href="/blanklink.html">
+                                <div class="foodImg">
+                                        <img
+                                                src="https://images.unsplash.com/photo-1577805947697-89e18249d767?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=398&q=80">
+                                        <h3 class="Heading1">Shakes</h3>
+
+                                </div>
+                        </a>
+                </div> -->
+    </section>
+    <!-- </section> -->
+
+    <!-- OUR PRIORITIES -->
+    <section id="OurPriorities">
+        <h3 class="heading"> OUR CONCERNS </h3>
+
+        <div class="subSection">
+            <div id="slider-container" class="feature">
+                <img src="https://i.ibb.co/RByWV53/feature1.png">
+                <h4> We deliver the best food</h4>
+            </div>
+
+            <div class="feature">
+                <img src="https://i.ibb.co/6tjzCcP/feature2.png ">
+                                <h4>Get the food at your doorstep</h4>
+                        </div>
+
+                        <div class="feature ">
+                                <img src=https://i.ibb.co/P5Tbsc7/feature3.png">
+                <h4>Fast Delivery</h4>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="subSection">
+        <h3 class="heading">TOP BRANDS </h3>
+
+        <div id="slider-container" class="slider">
+            <div class="slide">
+                <div class="fooimg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/McDonald%27s_logo.svg/220px-McDonald%27s_logo.svg.png">
+                    <div class="text">1</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="fooimg">
+                    <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/v1488266135/vw9dwa2fbgqzdmkizszx.png">
+                    <div class="text">2</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="fooimg">
+                    <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-35079,resizemode-1,msid-45329585/industry/cons-products/food/india-emerges-as-dominos-biggest-market-outside-us.jpg">
+                    <div class="text">3</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="fooimg">
+                    <img src="https://pbs.twimg.com/profile_images/1205005901230415872/M6cLvGEq_400x400.jpg">
+                    <div class="text">4</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="fooimg">
+                    <img src="http://feenix.co.in/wp-content/uploads/2018/01/1024px-KFC_logo.svg_.png">
+                    <div class="text">5</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="fooimg">
+                    <img src="https://pbs.twimg.com/profile_images/1293278688465899521/-J-WylRi_400x400.png ">
+                    <div class="text ">6</div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="fooimg">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/404/8b1a7464344667.Y3JvcCwxMzg0LDEwODMsMTc0LDA.jpg ">
+                    <div class=" text ">7</div>
+                </div>
+            </div>
+
+            <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
+            <a class="next " onclick="plusSlides(1) ">&#10095;</a>
+        </div>
+        <br>
+
+
+        <div style="text-align:center ">
+            <span class="dot " onclick="currentSlide(1) "></span>
+            <span class="dot " onclick="currentSlide(2) "></span>
+            <span class="dot " onclick="currentSlide(3) "></span>
+            <span class="dot " onclick="currentSlide(4) "></span>
+            <span class="dot " onclick="currentSlide(5) "></span>
+            <span class="dot " onclick="currentSlide(6) "></span>
+            <span class="dot " onclick="currentSlide(7) "></span>
+        </div>
+
+
+    </section>
+
+    <!--WHATS NEW {WE WILL FILL THIS LATER, AFTER ADDING RESTAURANTS}  -->
+    <!-- <div id="WhatsNew " class="card ">
+        <h1 class="heading "> WHAT'S NEW </h1>
+        <div class="flex-row " style="justify-content: center; ">
+                <div style="width:25%; display: flex; flex-direction: column; align-items: center; ">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g6ee8uhnt5hespbngfs2 "
+                                width="30% " height="50% " />
+                        <p class="CARD "> </p>
+                </div> 
+
+                <div style="width:25%; display: flex; flex-direction: column; align-items: center; ">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy "
+                                width="30% " height="50% " />
+                        <p  class="CARD "></p>
+                </div>
+
+                <div style="width:25%; display: flex; flex-direction: column; align-items: center; ">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy "
+                                width="30% " height="50% " />
+                        <p  class="</p>
+            </div>
+
+            <div style="width:25%; display: flex; flex-direction: column; align-items: center;">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy" width="30%" height="50%" />
+                <p class="CARD"></p>
+            </div>
+
+            <div style="width:25%; display: flex; flex-direction: column; align-items: center;">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy" width="30%" height="50%" />
+                <p class="CARD"></p>
+            </div>
+
+            <div style="width:25%; display: flex; flex-direction: column; align-items: center;">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn" width="30%" height="50%" />
+                <p class="</p>
+                </div>
+        </div>
+</div> -->
+
+    <hr>
+
+    <!-- Footer -->
+    <div id=" footer ">
+        <p style="text-center ">Copyright © My Website 2019</p>
+        <!-- ADD CLASS IF NEEDED TO ALLIGN COPYRIGHT TEXT -->
+        <p style="text-align: right: cursor: float: margin-bottom:; ">ALL RIGHTS RESERVED</p>
+        <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2021 © FOODY™ Ltd. All rights reserved
+        </p>
+
+        <div class="footatt ">
+            <a href="/dummy.html ">Who are we</a>
+        </div>
+
+        <div class="footatt ">
+            <a href="/dummy.html ">Where you can find us</a>
+        </div>
+
+        <div class="footatt ">
+            <a href="/dummy.html ">Help & Support</a>
+        </div>
+
+        <div class="footatt ">
+            <a href="/dummy.html ">Nutrition Information </a>
+        </div>
+
+        <div class="footatt ">
+            <a href="/dummy.html "> Contact Us </a>
+        </div>
+
+        <div class="footatt ">
+            <a href="/dummy.html ">Privacy Policy</a>
+        </div>
+
+        <div class="footatt ">
+            <a href="/dummy.html ">Covid-19 Safety</a>
+        </div>
+
+
+        <div class="footatt ">
+            <a href="/dummy.html ">Terms and Conditions</a>
+        </div>
+
+        <h3>CONNECT US ON SOCIAL MEDIA</h3>
+        <div class="SocialMedia ">
+            <a href="https://www.instagram.com/invites/contact/?i=1syidxn2cx6ma&utm_content=jr4idf9 "><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/200px-Instagram_logo_2016.svg.png " alt="instagram "></a>
+
+            <a href="https://www.facebook.com "> <img src="https://image.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg " alt="facebook image "></a>
+        </div>
+    </div>
+
+    <hr>
+    <script>
+        function prev() {
+            document.getElementById('slider-container').scrollLeft -= 270;
+        }
+
+        function next() {
+            document.getElementById('slider-container').scrollLeft += 270;
+        }
+
+
+        $(".slide img ").on("click ", function() {
+            $(this).toggleClass('zoomed');
+            $(".overlay ").toggleClass('active');
+        }) var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlidesfade");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none ";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active ", " ");
+            }
+            slides[slideIndex - 1].style.display = "block ";
+            dots[slideIndex - 1].className += " active ";
+        }
+    </script>
+</body>
+
+</html>

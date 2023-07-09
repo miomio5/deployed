@@ -1,0 +1,498 @@
+*{
+  /* margin: 10px 10px; */
+  font-family: 'Bona Nova', serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/05/Black-Abstract-HD-Wallpaper.jpg");
+}
+
+.fillform{
+  font-family: 'Bona Nova', serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: firebrick;
+}
+
+#title{
+  font-size: 35px;
+  font-family: 'Bona Nova', serif;
+  display: block;
+  height:100px;
+  padding:250px;
+  color:white;
+  text-align: center;
+  border-bottom: solid rgb(255, 255, 255) 15px;
+  
+}
+
+.about{
+  font-size:25px;
+  padding:120px 20px;
+  text-align: center;
+  border-bottom:5px solid rgb(44, 218, 44);
+  color:white;
+}
+
+#image{
+  position:absolute; 
+  top:0px; 
+  left:0px;
+  z-index:-1;
+  height:100%;
+  width:100%;
+}
+
+.navigate{
+  display: flex;
+  top:0px;
+  left:0px;
+  position:sticky;
+} 
+
+.navigate::before{
+  content: "";
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  left:-5px;
+  height: 100%;
+  width:100%;
+  z-index:-1;
+  /* opacity: 0.7; */
+  border-radius:2px;
+  border:solid 3px rgb(53, 230, 53);
+  animation-name: example;
+  animation-duration:2s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {border:solid 3px rgb(233, 71, 139);}
+  25% {border:solid 3px rgb(247, 225, 30);}
+  50% {border:solid 3px rgb(88, 230, 59);}
+  75% {border:solid 3px rgb(56, 104, 238);}
+  100% {border:solid 3px rgb(233, 71, 139);}
+}
+
+.navigate ul{
+  display:flex;
+  list-style: none;
+}
+
+.navigate ul li{
+  padding:20px;
+}
+
+.navigate ul li a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-size: 23px;
+  border-radius: 2px;
+  padding:2px;
+}
+
+.navigate ul li a:hover{
+  background-color: rgb(0, 0, 0);
+  color:rgb(0, 255, 13);
+} 
+
+h2{
+  font-family: 'Bona Nova', serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(255, 255, 255);
+} 
+
+form{
+  background-image: url("https://static.wixstatic.com/media/cc2547_be7c33e2a02b4936823ec0c41264363f~mv2_d_6000_2600_s_4_2.jpeg/v1/fill/w_923,h_400,al_c,q_85,usm_0.66_1.00_0.01/cc2547_be7c33e2a02b4936823ec0c41264363f~mv2_d_6000_2600_s_4_2.jpeg");
+  font-family: 'Roboto', sans-serif;
+  border-radius:5px;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+button{
+  background-color:white ;
+  color: Black;
+  font-family: 'Roboto', sans-serif;
+}
+
+button:hover{
+  background-color: rgb(30, 255, 0);
+  color:rgb(0, 0, 0);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(30, 255, 0);
+  min-width: 100px;
+  box-shadow: 0px 3px 8px 0px rgb(30, 255, 0);
+  padding: 8px 10px;
+  z-index: 10;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center; 
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  padding: 15px;
+}
+
+.dropdown-content:hover {
+  display: block;
+}
+
+.container {
+  display: flex;
+  position: fixed;
+  text-align: center;
+  font-size: 25px;
+  bottom: 12px;
+  right: 10px;
+  font-weight: bolder;
+  color: white;
+}
+
+.container::before{
+  content: "";
+  background-color: rgb(0, 0, 0);
+  position:absolute;
+  height: 100%;
+  width:100%;
+  z-index: -1;
+  /* opacity: 0.7; */
+  border-radius:4px;
+  
+}
+
+.dropbtn{
+  background-color: transparent;
+  border:none;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-size: 23px;
+  border-radius: 2px;
+  padding:2px;
+  font-family: 'Bona Nova', serif;
+}
+
+.dropbtn:hover{
+  background-color: rgb(0, 0, 0);
+  color:rgb(0, 255, 13);
+}
+
+.outerctus {
+  padding: 10px;
+  background-image: url("https://static.wixstatic.com/media/cc2547_be7c33e2a02b4936823ec0c41264363f~mv2_d_6000_2600_s_4_2.jpeg/v1/fill/w_923,h_400,al_c,q_85,usm_0.66_1.00_0.01/cc2547_be7c33e2a02b4936823ec0c41264363f~mv2_d_6000_2600_s_4_2.jpeg");
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  text-align: center;
+  margin:auto;
+  width:850px;
+}
+
+#txtName,#txtnumber,#txtEmail,textarea,select {
+  font-family: 'Roboto', sans-serif;
+  width: 70%;
+  padding: 12px;
+  border: 3px solid rgb(59, 228, 67); 
+  border-radius: 4px;
+}
+
+#bt{
+  font-family: 'Roboto', sans-serif;
+  width: auto;
+  float: right;
+  cursor: pointer;
+  padding: 7px;
+  margin: 0px 360px;
+}
+
+.ctus {
+  padding: 5px;
+  overflow:hidden ;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  text-align: center;
+  margin:auto;
+  width:850px;
+}
+
+#cartpict{
+  height:18px;
+  width:18px;
+  background-color: rgb(253, 253, 253);
+  padding:3px;
+  border-radius: 5px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/*   
+.mySlides {
+    display: none;
+  }
+  
+
+.slideshow-container {
+  width: 50%;
+  position: relative;
+  margin: auto;
+  animation:identifier;
+  animation-duration: 4s;
+}
+
+@keyframes identifier {
+0% {background-image: url("https://assets3.razerzone.com/K0OxFmEDEFeLhwlGTtLTcqdqa5A=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhd7%2Fhc2%2F9189035999262%2FBlade-14-Piper-A-N-1500x1000-01.jpg");}
+
+20% {background-image: url("https://assets3.razerzone.com/i6Blkk6mtq6R4F-IEG8wyHOumVA=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh57%2Fh3b%2F9090938077214%2Frazer-blade-stealth-13-gallery-01.jpg");}
+
+40% {background-image: url("https://assets3.razerzone.com/NsEl2yRODRYJh0aFnGy0PMLdWcc=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhb0%2Fhdf%2F9099473616926%2Frazerbook-gallery-1500x1000-3.jpg");}
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 20%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.text {
+  color: #f2f2f2;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: relativw;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+} */
+
+/* .animate{
+  display:block;
+  width:100%;
+  height:1000px;
+  margin:auto;
+  animation: ani;
+  animation-iteration-count: infinite;
+  animation-duration:10s;
+  background-size: 100% 100%;
+}
+
+@keyframes ani {
+  0% {
+    background-image: url("https://assets3.razerzone.com/Ry1BGuwxiwcnOHDht6WWQLUzcoY=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh32%2Fhd6%2F9081221054494%2Frazer-kraken-x-for-console-gallery-2-1500x1000.jpg");
+  }
+  16% {
+    background-image: url("https://assets3.razerzone.com/i6Blkk6mtq6R4F-IEG8wyHOumVA=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh57%2Fh3b%2F9090938077214%2Frazer-blade-stealth-13-gallery-01.jpg");
+  }
+  33% {
+    background-image: url("https://assets3.razerzone.com/NsEl2yRODRYJh0aFnGy0PMLdWcc=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhb0%2Fhdf%2F9099473616926%2Frazerbook-gallery-1500x1000-3.jpg");
+  }
+  49% {
+    background-image: url("https://assets3.razerzone.com/U0K6C19gYxXiAGkFX44nZcsPzb0=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh5f%2Fh57%2F9081460293662%2Fraptor-27-gallery-hero.jpg");
+  }
+  65% {
+    background-image: url("https://assets3.razerzone.com/1d2VjIqkSNKaqPIIwoGUCEVJIEE=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh2c%2Fh51%2F9090588278814%2Fiskur-gallery-1500x1000-hero.jpg");
+  }
+  82% {
+    background-image: url("https://assets3.razerzone.com/7pZkQfAecH-ExnjriCBFsjhREYw=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh96%2Fhe7%2F9122163294238%2Frazer-hammerhead-true-wireless-pro-1500x1000-20201204-01.jpg");
+  }
+  100% {
+    background-image: url("https://assets3.razerzone.com/Ry1BGuwxiwcnOHDht6WWQLUzcoY=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh32%2Fhd6%2F9081221054494%2Frazer-kraken-x-for-console-gallery-2-1500x1000.jpg");
+  }
+}
+
+.bottom::after{
+position: absolute;
+bottom: 8px;
+left: 16px;
+content: "Hello";
+font-size:100px;
+color:white
+} */
+
+/* Position the image container (needed to position the left and right arrows) */
+.containers {
+  position: relative; 
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  margin-left: 430px;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+#searchbx{
+  float:right; right:120px;top:40px;position:absolute;border-radius: 5px;padding: 5px;
+}

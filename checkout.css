@@ -1,0 +1,242 @@
+body{
+    background-color: black;
+}
+
+.navigate{
+    display: flex;
+    top:0px;
+    left:0px;
+    position:sticky;
+}
+
+.navigate::before{
+    content: "";
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+}
+
+.navigate ul{
+    display:flex;
+    list-style: none;
+}
+
+.navigate ul li{
+    padding:20px;
+}
+
+
+h2{
+    font-family: 'Bona Nova', serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 255, 255);
+} 
+
+#secured{
+    float:right;
+    right:180px;
+    position:absolute;
+    font-family: 'Bona Nova', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color:rgb(0, 255, 13);
+}
+
+#checklist{
+    background-color: rgb(78, 75, 75);
+    color:white;
+    font-weight: bold;
+    font-family: 'Bona Nova', serif;
+    padding: 20px;
+    margin:auto;
+    border-bottom: solid 1px rgb(0, 255, 13); 
+    text-align: center;
+    margin:auto;
+    font-size: 20px;
+}
+
+#contactdetails{
+    display:block;
+    width:500px;
+    margin:50px;
+    font-family: 'Bona Nova', serif;
+    float:left;
+ }
+
+ #cartdetails{
+    width:500px;
+    margin:50px 100px;
+    font-family: 'Bona Nova', serif;
+    float:right;
+    color:white;
+    font-size: 20px;
+    background-color: rgb(78, 75, 75);
+    padding: 30px;
+    border-radius: 5px;
+ }
+
+
+
+ .flex-container {
+    display: flex;
+    background-color: rgb(131, 49, 49);
+  }
+  
+  .flex-container .cont {
+    background-color: #e59999;
+    margin: auto;
+    padding: 20px;
+    font-size: 30px;
+    float:left;
+  }
+
+  body {
+    font-family: 'Bona Nova', serif;
+    font-size: 17px;
+    padding: 8px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  .row {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    font-family: 'Bona Nova', serif;
+  }
+  
+  .col-25 {
+    -ms-flex: 25%; 
+    flex: 25%;
+  }
+  
+  .col-50 {
+    -ms-flex: 50%; 
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%;
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .container {
+    background-color: #000000;
+    padding: 15px 25px 20px 25px;
+    border: 2px solid rgb(0, 255, 13);
+    border-radius: 3px;
+    color: white;
+    font-family: 'Bona Nova', serif;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+  .btn {
+    background-color: #000000;
+    color: rgb(55, 223, 55);
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .btn:hover {
+    background-color: #414040;
+  }
+  
+  a {
+    color: #2196F3;
+  }
+  
+  hr {
+    border: 1px solid rgb(255, 255, 255);
+  }
+  
+  span.price {
+    float: right;
+    color: rgb(163, 157, 157);
+  }
+  
+ 
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
+
+ 
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,156 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color:white;
+    font-family: 'Bona Nova', serif;
+}
+.topbar
+{
+    background-color:#403d39;
+    height:90px;
+    padding-top:2px;
+    padding-left:2px;
+}
+h1
+{ display:flex;}
+#size
+{
+font-size:10px;
+}
+#hsize
+{display:flex;}
+
+.editing
+{ height:250px;
+border-bottom:2px white solid;
+width:100%;
+}
+
+button{
+    background-color:#70e000;
+    width:100px;
+    height:40px;
+    margin:20px;
+    /* margin-bottom: 50px; */
+
+} 
+
+.post{
+    display:flex;
+    float:right;
+    margin-bottom: 50px;
+}
+img
+{
+    width:500px;
+    height:400px;
+/*  display:flex; */
+}
+
+#img1{
+    width:300px;
+    height:300px;
+}
+
+.product {
+    float:left;
+    display:block;
+    color:gray;
+    /* width:400px; */
+    height:300px;
+}
+
+h2{
+    color:white;
+    font-size:30px;
+}
+select
+{
+    background-color:black;
+    width:70px;
+    height: 40px;
+    border:1px gray solid;
+    color: white;
+    text-align: center;
+}
+.qty{
+    display:flex;
+    position: relative;
+    top:100px;
+    left:200px;
+
+    /* float:right;*/
+    /* margin-left: 100px; */
+} 
+
+.remove{
+    /* text-decoration: none; */
+    color: gray;
+    display: block;
+    position:relative;
+    right:70px;
+    top:50px;
+    cursor:pointer;
+} 
+
+.pricecart{
+    /* float: right; */
+    display:flex;
+    position:relative;
+    left:600px;
+    top:63px;
+}
+
+.listcart{
+    position:relative;
+    height:100px;
+    width:600px;
+    list-style-type:none;
+    /* float:left; */
+    bottom: 50px;
+    left:20px;
+}
+
+.img2
+{
+    display:flex;
+}   
+
+.Quantity{
+    position: relative;
+    left:70px;
+    bottom:30px;
+}
+
+.bill
+{
+    display:block;
+    font-size:20px;
+}
+
+.carthead{
+    text-align: left;
+}
+.subtot
+{
+    border-bottom:2px white solid;
+    width:100%;
+}
+
+#chooseplan{
+    width:400px;
+}
+
+.outer{
+    display: flex;
+}
+
+.inner{
+    margin:30px -15px;
+    padding: auto; 
+    width:500px;
+}
+.innerrt{
+    margin-left:auto;
+    margin-top:50px;
+
+}

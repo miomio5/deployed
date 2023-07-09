@@ -1,0 +1,152 @@
+body{
+    background-color: rgba(0, 0, 0, 0.829);
+    margin: 0px;
+    
+}
+#shop{
+    color: white;
+    background-color: black(197, 21, 21, 0.733);
+    font-family: 'quicksand', sans-serif;
+    height: 0px;
+    padding: 0px;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+}
+    
+
+.navbar {
+    background-color: black;
+    height: 150px;
+    border-bottom: 2px solid;
+    border-color: chartreuse ;
+    margin: 0px auto;
+    border-top: 0px;
+    padding:0px
+    
+}
+.navbar ul {
+    overflow: auto;
+}
+.navbar li{
+    float: left;
+    list-style: none;
+    text-decoration-line: none;
+    padding: 40px 60px 60px ;
+    font-size: 20px;
+    color: white;
+}
+.navbar li a{
+    color: white;
+    text-decoration-line: none;
+
+}
+.navbar li a:hover{
+    color: chartreuse;
+}
+
+.first{
+    margin-left: 150px;
+}
+.last{ 
+    margin-right:150px ;
+}
+/* .shop{
+    margin-left: 10px;
+} */
+  
+
+.item{
+    
+    background-color: black;
+    height: 700px;
+    width: 300px ;
+    border-radius: 1px;
+    border-bottom: 2px solid;
+   border-color: chartreuse;
+  
+   
+    
+}
+
+.image{
+    background-color: rgba(37, 28, 28, 0.514);
+   
+}
+
+ h3{
+    font-family: "monaco", monospace;
+    font-weight: bold;
+    color : white;
+    padding-left: 15px;
+
+
+}
+h3:hover{
+    text-decoration-line: underline;
+}
+li{
+    color: rgba(255, 255, 255, 0.767);
+
+}
+.view { color:chartreuse;
+   
+ }
+
+
+ h2{ color: white;
+
+}
+ input[type="submit"]{
+    color: black;
+    background-color: chartreuse;
+    font-family: "monaco" , monospace;
+    font-weight: bolder;
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 150px;
+}
+input[type="submit"]:hover{
+  background-color: rgb(158, 231, 85);
+}
+/* .item_2{
+    
+    background-color: black;
+    height: 600px;
+    width: 300px ; */
+
+    .left{
+
+        float: left;
+        margin-left: 190px;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    .right{
+        float: left;
+        margin-left: 100px;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    .center {
+        float: left;
+        margin-left: 70px;
+        margin-right: 5px;
+        margin-top: 10px;
+        
+    }
+
+    .button{
+        /* background-color: aqua; */
+        padding: 3px 10px;
+        font-size:17px;
+    }
+
+ #deathadder{
+    height: 285px;
+}
+

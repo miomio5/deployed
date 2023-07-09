@@ -1,0 +1,64 @@
+@media screen {
+    
+    #contactusbox{
+        width:500px;
+        margin:auto;
+        font-family: 'Bona Nova', serif;
+     }
+
+     .box .input-box{
+       position: relative;
+     }
+     .box .input-box input{
+       width: 90%;
+       padding: 10px 0px;
+       font-size: 16px;
+       color: rgb(255, 255, 255);
+       letter-spacing: 1px;
+       margin:20px 25px;
+       border: none;
+       outline: none;
+       border-bottom: 3px solid #18ee10;
+       background-color: black;
+     }
+      .box .input-box label{
+       position: absolute;
+       top: 0;
+       left: 0;
+       letter-spacing: 1px;
+       padding: 1px 5px;
+       font-size: 16px;
+       color: rgb(255, 255, 255);
+       font-weight: bold;
+       transition: .5s;
+       margin: 20px 30px;
+     }
+     
+     .box .input-box input:focus ~ label,
+     .box .input-box input:valid ~ label
+     {
+       top: -18px;
+       left: 0px;
+       color: #ffffff;
+       font-size: 12px;
+       background-color: #000000;
+       border-radius: 2px;
+     }
+     .box input[type="submit"]{
+       border: none;
+       outline: none;
+       background: #18ee10;
+       padding: 10px 20px;
+       border-radius: 5px;
+       cursor:pointer;
+       font-size: 16px;
+       font-weight: bold;
+       margin:0px 220px ;
+     }
+     
+     .box input[type="submit"]:hover{
+       background-color: #ffffff;
+       color:#000000;
+     }
+   
+   }
