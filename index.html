@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEB DEVELOPMENT</title>
+  <link rel="stylesheet" href="website.css" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contactus.css" media="screen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  
+
+  <nav class="navigate">
+    <ul>
+      <div class="container" id="time"></div>
+
+      <img src="logo.png" style="width:80px;height:80px;float:left; margin:0px 20px">
+      <li><a href="#image"> Home </a></li>
+      <li><a href="#about"> About </a></li>
+
+      <li class="dropdown">
+        <a href="shop_page.html" class="dropbtn">Shop</button>
+          <div class="dropdown-content">
+            <a href="#">Gaming Mouse</a><br><br />
+            <a href="#">Keyboard</a><br><br />
+            <a href="#">Controller</a><br />
+          </div>
+      </li>
+      <li><a href="#contact"> Contact Us </a></li>
+
+      <li><a href="login.html" style="float:right;right:310px;position:absolute"> Login/SignUp </a></li>
+      
+      <input type="text" placeholder="Search Here" id="searchbx">
+
+      <button onclick="searchpg()" style="float:right;right:80px;top:40px;position:absolute;border-radius: 5px;">
+        <img src="search.png" style="height:18px;width:18px;padding-top:3px">
+      </button>
+
+      <a href="testing.html" class="tooltip" style="float:right;right:50px;top:43px;position:absolute;border-radius: 5px;">
+        <img src="cart.png" id="cartpict">
+        <span class="tooltiptext">Cart</span>
+      </a>
+
+      </l1>
+    </ul>
+  </nav>
+
+  <img src="wp4584981-gaming-setup-wallpapers.jpg" id="image">
+
+
+  <h1 id="title">THE BEST GAMING EQUIPMENTS </h1>
+
+  <h2 id="about">ABOUT OUR PRODUCTS</h2>
+  <img
+    src="https://www.howtogeek.com/wp-content/uploads/2017/06/gaming-mouse-with-a-blue-glow.jpeg?height=200p&trim=2,2,2,2"
+    style="float:right; height:300px;width:480px; padding:20px">
+
+  <p class="about">
+    The Erazer DeathAdder has an all-around fantastic shape for all sorts of grips and hand sizes. Spend hundreds of
+    hours playing games, using Photoshop, and browsing the Internet with it. Despite years of iterations, we never
+    messes with the DeathAdder's shape. There's no reason to.
+  </p>
+
+  <img src="https://images.anandtech.com/doci/11352/keyboard.png"
+    style="float:left; height:300px;width:480px; padding:20px">
+
+  <p class="about">
+    The Erazer KM780 RGB keyboard is a fully mechanical keyboard using Cherry’s MX switches. Besides basic keyboard
+    functionality, the board also includes several extra function keys (including a dedicated timer key!). Finally, the
+    keyboard offers extensive RGB lighting, with fully programmable per-key RGB backlighting.
+  </p>
+
+  <img src="https://awesomestufftobuy.com/wp-content/uploads/2019/06/razer-raiju-elite-ps4-gaming-controller.jpg"
+    style="float:right; height:300px;width:450px; padding:20px">
+
+  <p class="about">
+    Experience console gaming with this wireless gamepad by Erazer. It comes with easy to customize controls and
+    extensively supports your PC. It is a perfect controller that you can have for your PC. The built-in dual vibration
+    motor provides maximum game thrill.
+  </p>
+
+  <h2 id='contact'>Other Products</h2>
+  <!-- ------------------------------------------------------------------------------------------------------ -->
+  <!-- <div class="animate" ></div> -->
+
+
+  <div class="containers">
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+      <img
+        src="https://assets3.razerzone.com/K0OxFmEDEFeLhwlGTtLTcqdqa5A=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhd7%2Fhc2%2F9189035999262%2FBlade-14-Piper-A-N-1500x1000-01.jpg"
+        style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+      <img
+        src="https://assets3.razerzone.com/i6Blkk6mtq6R4F-IEG8wyHOumVA=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh57%2Fh3b%2F9090938077214%2Frazer-blade-stealth-13-gallery-01.jpg"
+        style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+      <img
+        src="https://assets3.razerzone.com/NsEl2yRODRYJh0aFnGy0PMLdWcc=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhb0%2Fhdf%2F9099473616926%2Frazerbook-gallery-1500x1000-3.jpg"
+        style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+      <img
+        src="https://assets3.razerzone.com/U0K6C19gYxXiAGkFX44nZcsPzb0=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh5f%2Fh57%2F9081460293662%2Fraptor-27-gallery-hero.jpg"
+        style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+      <img
+        src="https://assets3.razerzone.com/1d2VjIqkSNKaqPIIwoGUCEVJIEE=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh2c%2Fh51%2F9090588278814%2Fiskur-gallery-1500x1000-hero.jpg"
+        style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+      <img
+        src="https://assets3.razerzone.com/7pZkQfAecH-ExnjriCBFsjhREYw=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh96%2Fhe7%2F9122163294238%2Frazer-hammerhead-true-wireless-pro-1500x1000-20201204-01.jpg"
+        style="width:60%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor"
+          src="https://assets3.razerzone.com/K0OxFmEDEFeLhwlGTtLTcqdqa5A=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhd7%2Fhc2%2F9189035999262%2FBlade-14-Piper-A-N-1500x1000-01.jpg"
+          style="width:100%" onclick="currentSlide(1)" alt="ERazer Stealth 17">
+      </div>
+      <div class="column">
+        <img class="demo cursor"
+          src="https://assets3.razerzone.com/i6Blkk6mtq6R4F-IEG8wyHOumVA=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh57%2Fh3b%2F9090938077214%2Frazer-blade-stealth-13-gallery-01.jpg"
+          style="width:100%" onclick="currentSlide(2)" alt="ERazer Book 15">
+      </div>
+      <div class="column">
+        <img class="demo cursor"
+          src="https://assets3.razerzone.com/NsEl2yRODRYJh0aFnGy0PMLdWcc=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhb0%2Fhdf%2F9099473616926%2Frazerbook-gallery-1500x1000-3.jpg"
+          style="width:100%" onclick="currentSlide(3)" alt="ERazer Book 14">
+      </div>
+      <div class="column">
+        <img class="demo cursor"
+          src="https://assets3.razerzone.com/U0K6C19gYxXiAGkFX44nZcsPzb0=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh5f%2Fh57%2F9081460293662%2Fraptor-27-gallery-hero.jpg"
+          style="width:100%" onclick="currentSlide(4)" alt="ERazer Raptor 17">
+      </div>
+      <div class="column">
+        <img class="demo cursor"
+          src="https://assets3.razerzone.com/1d2VjIqkSNKaqPIIwoGUCEVJIEE=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh2c%2Fh51%2F9090588278814%2Fiskur-gallery-1500x1000-hero.jpg"
+          style="width:100%" onclick="currentSlide(5)" alt="Erazer Gaming Chair">
+      </div>
+      <div class="column">
+        <img class="demo cursor"
+          src="https://assets3.razerzone.com/7pZkQfAecH-ExnjriCBFsjhREYw=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh96%2Fhe7%2F9122163294238%2Frazer-hammerhead-true-wireless-pro-1500x1000-20201204-01.jpg"
+          style="width:100%" onclick="currentSlide(6)" alt="Erazer Mobile Audio">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>
+
+  <br>
+  <hr style="width:100%;border:3px solid rgb(61, 233, 61);">
+  <!---------------------------------------------------------------------------------  -->
+  <h2 id='contact'>Contact Us</h2>
+  <div id="contactusbox" class="box">
+    <form action="config.php" onsubmit="myFunction()">
+      <div class="input-box">
+        <input type="text" name="username" autocomplete="off" required>
+        <label for="">Name</label>
+      </div>
+
+      <div class="input-box">
+        <input type="email" name="email" autocomplete="on" required>
+        <label for="">Email</label>
+      </div>
+
+      <div class="input-box">
+        <input type="phoneno" name="phoneno" autocomplete="off" required>
+        <label for="">Phone Number</label>
+      </div>
+
+      <div class="input-box">
+        <input type="query" name="query" autocomplete="off" required>
+        <label for="">Query</label>
+      </div>
+      <script>function myFunction() { alert("The form was submitted"); }</script>
+
+      <input type="submit" value="Save">
+
+    </form>
+
+  </div>
+
+  <br>
+  <h2>Thank You for visiting here!!</h2>
+  <script src="website.js"></script>
+  <script src="test.js"></script>
+</body>
+
+</html>
